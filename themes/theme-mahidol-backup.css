@@ -65,7 +65,7 @@ h2 {
 /* specificity (0,1,2) — beats ul/ol { margin:0 } (0,0,1) and h3 { margin-top } (0,0,1) */
 /* :not(.divider) prevents adding 108px margin between the two h2s on divider slides */
 section:not(.divider) h2 + * {
-  margin-top: 86px;
+  margin-top: 108px;
 }
 
 h3 {
@@ -143,8 +143,8 @@ tr:nth-child(even) td {
 blockquote {
   border-left: 4px solid var(--color-accent);
   background: var(--color-highlight);
-  padding: 2px 16px;
-  margin: 4px 0;
+  padding: 14px 20px;
+  margin: 16px 0;
   border-radius: 0 6px 6px 0;
   color: var(--color-heading);
   font-weight: 500;
@@ -160,20 +160,6 @@ code {
   font-size: 0.88em;
 }
 
-pre {
-  background: #f1f5f9;
-  border-radius: 8px;
-  padding: 5px 10px;
-  overflow-x: auto;
-}
-
-pre code {
-  background: transparent;
-  padding: 0;
-  color: var(--color-foreground);
-  font-size: 0.82em;
-}
-
 /* ─── Layout helpers ────────────────────────────── */
 .columns {
   display: grid;
@@ -181,21 +167,10 @@ pre code {
   gap: 32px;
 }
 
-.center {
-  text-align: center;
-}
-
-.center img,
-.center p {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* ─── Page number ───────────────────────────────── */
 section::after {
   position: absolute;
-  bottom: -38px;
+  bottom: -28px;
   right: -20px;
   font-size: 18px;
   color: var(--color-muted);
@@ -209,7 +184,7 @@ section footer {
   position: absolute;
   left: 64px;
   right: 64px;
-  bottom: 18px;
+  bottom: 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -219,7 +194,7 @@ section footer::before {
   content: '';
   width: 100%;
   position: absolute;
-  top: -10px;
+  top: -12px;
   left: 0;
   height: 1px;
   background: var(--color-border);
@@ -239,12 +214,6 @@ section.lead {
 
 section.lead footer {
   display: none;
-}
-
-section.lead::after {
-  position: absolute;
-  bottom: -48px;
-  right: -20px;
 }
 
 section.lead h1 {
@@ -290,12 +259,6 @@ section.divider {
   justify-content: center;
   align-items: flex-start;
   padding: 72px 80px;
-}
-
-section.divider::after {
-  position: absolute;
-  bottom: -48px;
-  right: -20px;
 }
 
 section.divider h2 {
@@ -347,27 +310,4 @@ section.budget {
   font-weight: 700;
   margin-right: 10px;
   flex-shrink: 0;
-}
-
-/* ─── Dense layout (code-heavy slides) ──────────── */
-section.dense {
-  font-size: 22px;
-}
-section.dense pre,
-section.dense code {
-  font-size: 0.95em;
-  line-height: 1.35;
-}
-section.dense p,
-section.dense li {
-  font-size: 0.85em;
-  line-height: 1.4;
-}
-section.dense h2 {
-  font-size: 30px;
-  margin-bottom: 0.3em;
-}
-section.dense h3 {
-  font-size: 22px;
-  margin-bottom: 0.2em;
 }
